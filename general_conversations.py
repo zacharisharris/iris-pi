@@ -7,6 +7,8 @@ def who_are_you():
     tts(message)
 
 def undefined():
-    tts("I am sorry, I don't know what that means!")
+    message = "I am sorry but I do not know what that means."
+    tts(message)
+    print("I am sorry, I do not know what that means!")
     
     
