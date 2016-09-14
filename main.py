@@ -13,7 +13,8 @@ from brain import brain
 name = "Harris"
 last_name = "Zacharis"
 full_name = name + last_name
-city_name = "Athens"
+city_name = "Salonica"
+city_code = "GRXX0019"
 
 print('Initializing voice assistance function..')
 
@@ -33,6 +34,6 @@ def main():
 		except sr.RequestError as e:
 			print("Could not request results from Google Speech Recognition service; {0}".format(e))
 	   
-		brain(name, speech_text)
+		brain(name, speech_text, city_name, city_code)
 	
 main()
