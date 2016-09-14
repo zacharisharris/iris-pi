@@ -15,7 +15,9 @@ last_name = "Zacharis"
 full_name = name + last_name
 city_name = "Athens"
 
-tts('Welcome ' + full_name + ', high functions are online. How may I help you?')
+print('Initializing voice assistance function..')
+
+tts('Welcome ' + name + '. How may I help you?')
 
 
 def main():
