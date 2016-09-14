@@ -5,6 +5,7 @@ import tell_time
 import weather
 import define_subject
 import business_news_reader
+import sleep
 
 
 def brain(name, speech_text, city_name, city_code):
@@ -33,6 +34,8 @@ def brain(name, speech_text, city_name, city_code):
         define_subject.define_subject(speech_text)
     elif check_message(['business', 'news']):
         business_news_reader.news_reader()
+    elif check_message(['sleep']):
+        sleep.go_to_sleep()
     else:
         general_conversations.undefined()
     
