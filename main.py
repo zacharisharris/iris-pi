@@ -1,6 +1,7 @@
 import sys
 import yaml
 import speech_recognition as sr
+import play_music
 	
 from tts import tts
 from brain import brain
@@ -15,10 +16,12 @@ last_name = "Zacharis"
 full_name = name + last_name
 city_name = "Salonica"
 city_code = "GRXX0019"
+music_path = "/Downloads"
 
 print('Initializing voice assistance function..')
 
-tts('Welcome ' + name + '. How may I help you?')
+
+tts('Welcome ' + name + '. I am Iris. How may I help you?')
 
 
 def main():
@@ -34,6 +37,7 @@ def main():
 		except sr.RequestError as e:
 			print("Could not request results from Google Speech Recognition service; {0}".format(e))
 	   
-		brain(name, speech_text, city_name, city_code)
+		brain(name, music_path, speech_text, city_name, city_code)
+		play_music.mp3gen(music_path)
 	
 main()

@@ -6,9 +6,10 @@ import weather
 import define_subject
 import business_news_reader
 import sleep
+import play_music
 
 
-def brain(name, speech_text, city_name, city_code):
+def brain(name, speech_text, music_path, city_name, city_code):
     def check_message(check):
             """
             This function checks if the items in the list (specified in
@@ -36,8 +37,12 @@ def brain(name, speech_text, city_name, city_code):
         business_news_reader.news_reader()
     elif check_message(['sleep']):
         sleep.go_to_sleep()
+    elif check_message(['play', 'music']) or check_message(['music']):
+        play_music.play_random(music_path)
+    elif check_message(['play']):
+        play_music.play_specific_music(speech_text, music_path)
     else:
         general_conversations.undefined()
-    
+
 
     
